@@ -128,7 +128,7 @@ export function CaloriesPage() {
             type="date"
             value={dayKey}
             onChange={(e) => setDayKey(e.target.value)}
-            className="col-span-2 w-full sm:col-span-1 sm:w-[160px]"
+            className="col-span-2 w-full min-w-0 sm:col-span-1 sm:w-[160px]"
           />
         </div>
       </div>

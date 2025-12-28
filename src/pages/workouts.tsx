@@ -178,7 +178,7 @@ export function WorkoutsPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2 sm:col-span-2">
               <Label>Started</Label>
-              <Input type="datetime-local" value={editStartedAt} onChange={(e) => setEditStartedAt(e.target.value)} />
+              <Input type="datetime-local" value={editStartedAt} onChange={(e) => setEditStartedAt(e.target.value)} className="min-w-0" />
             </div>
             <div className="space-y-2">
               <Label>Duration (min)</Label>

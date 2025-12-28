@@ -64,4 +64,11 @@
   height: 0;
 }
 
+/* Prevent iOS native date/datetime inputs from exceeding container width. */
+input[type='date'],
+input[type='datetime-local'] {
+  max-width: 100%;
+  min-width: 0;
+}
+
 

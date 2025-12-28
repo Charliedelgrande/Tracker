@@ -9,6 +9,7 @@ import {
   Settings,
   Weight,
 } from 'lucide-react'
+import { useEffect, useRef } from 'react'
 
 const nav = [
   { to: '/', label: 'Dashboard', icon: Gauge },
@@ -21,8 +22,23 @@ const nav = [
   { to: '/settings', label: 'Settings', icon: Settings },
 ]
 
+const scrollByPath = new Map<string, number>()
+
 export function AppLayout() {
   const location = useLocation()
+
+  // Per-route scroll restoration:
+  // - Each screen remembers its own scroll position.
+  // - Navigating to a different screen doesn't inherit the previous screen's scroll.
+  const prevPathRef = useRef<string | null>(null)
+  useEffect(() => {
+    const prev = prevPathRef.current
+    if (prev) scrollByPath.set(prev, window.scrollY)
+    const next = scrollByPath.get(location.pathname) ?? 0
+    prevPathRef.current = location.pathname
+    requestAnimationFrame(() => window.scrollTo({ top: next, left: 0, behavior: 'auto' }))
+  }, [location.pathname])
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Mobile header */}

@@ -246,7 +246,7 @@ export function GoalsPage() {
                 </div>
                 <div className="space-y-2 sm:col-span-2">
                   <Label>End date</Label>
-                  <Input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+                  <Input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} className="min-w-0" />
                 </div>
               </div>
             </div>
@@ -363,7 +363,7 @@ export function GoalsPage() {
             </div>
             <div className="space-y-2">
               <Label>End date</Label>
-              <Input type="date" value={editEndDate} onChange={(e) => setEditEndDate(e.target.value)} />
+              <Input type="date" value={editEndDate} onChange={(e) => setEditEndDate(e.target.value)} className="min-w-0" />
             </div>
           </div>
           <DialogFooter>
