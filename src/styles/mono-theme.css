@@ -1,0 +1,16 @@
+/* Minimal monochrome polish */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.25);
+}
+
+

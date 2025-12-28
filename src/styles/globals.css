@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* shadcn-style CSS variables (we'll drive theme/accent via Settings). */
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Light (monochrome) */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 6%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --border: 0 0% 88%;
+
+    /* Accent token (defaults; overridden at runtime) */
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 98%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+    --border: 0 0% 18%;
+
+    /* Accent token (defaults; overridden at runtime) */
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 6%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  /* Avoid accidental text selection on chrome-y UI elements */
+  button,
+  a,
+  nav,
+  header {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
